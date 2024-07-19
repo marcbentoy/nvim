@@ -2,6 +2,8 @@ local map = require("utils.keymaps")
 
 vim.g.mapleader = " " 
 
+map("n", "<leader>ss", ":wa<CR>", { desc = "Save file" })
+
 -- Close buffer and window
 map("n", "<leader>qq", ":bd<CR>", { desc = "Close buffer and window" })
 
@@ -49,3 +51,12 @@ map("x", "p", "P")
 
 -- Close all buffers
 map("n", "<leader>bda", ":%bd<CR>", { desc = "Close all buffers" })
+
+-- todo-comment plugin
+vim.keymap.set("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
