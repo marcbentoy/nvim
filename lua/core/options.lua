@@ -4,6 +4,8 @@ local opt = vim.opt
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+opt.conceallevel = 1
+
 opt.encoding = "UTF-8"
 vim.o.termguicolors = true
 
