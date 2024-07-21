@@ -2,6 +2,7 @@ local map = require("utils.keymaps")
 
 vim.g.mapleader = " " 
 
+-- File
 map("n", "<leader>e", ":NvimTreeOpen<CR>", { desc = "Open Nvim Tree" })
 map("n", "<leader>ss", ":wa<CR>", { desc = "Save file" })
 
@@ -12,7 +13,7 @@ map("n", "<leader>qq", ":bd<CR>", { desc = "Close buffer and window" })
 map("n", "<leader>sq", ":nohl<CR>", { desc = "Clear search highlighting" })
 
 -- Reload configuration without restart nvim
-map("n", "<leader>r", ":so %<CR>")
+map("n", "<leader>r", ":soource<CR>")
 
 -- Window splits
 map("n", "<leader>ww", "<C-w>w")
