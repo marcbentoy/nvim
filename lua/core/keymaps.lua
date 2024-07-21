@@ -7,13 +7,14 @@ map("n", "<leader>e", ":NvimTreeOpen<CR>", { desc = "Open Nvim Tree" })
 map("n", "<leader>ss", ":wa<CR>", { desc = "Save file" })
 
 -- Close buffer and window
+map("n", "<leader>vq", ":%bd<CR>:q<CR>", { desc = "Close neovim" })
 map("n", "<leader>qq", ":bd<CR>", { desc = "Close buffer and window" })
 
 -- Clear search highlighting
 map("n", "<leader>sq", ":nohl<CR>", { desc = "Clear search highlighting" })
 
 -- Reload configuration without restart nvim
-map("n", "<leader>r", ":soource<CR>")
+map("n", "<leader>r", ":source<CR>")
 
 -- Window splits
 map("n", "<leader>ww", "<C-w>w")
