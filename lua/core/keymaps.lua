@@ -2,6 +2,7 @@ local map = require("utils.keymaps")
 
 vim.g.mapleader = " " 
 
+map("n", "<leader>e", ":NvimTreeOpen<CR>", { desc = "Open Nvim Tree" })
 map("n", "<leader>ss", ":wa<CR>", { desc = "Save file" })
 
 -- Close buffer and window
