@@ -105,7 +105,7 @@ return {
 				silent = true,
 				desc = "Go to type definition",
 			})
-			buf_set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", {
+			buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", {
 				noremap = true,
 				silent = true,
 				desc = "Rename",
@@ -120,7 +120,7 @@ return {
 				silent = true,
 				desc = "Show references",
 			})
-			buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.open_float()<CR>", {
+			buf_set_keymap("n", "<leader>d", "<cmd>lua vim.lsp.diagnostic.open_float()<CR>", {
 				noremap = true,
 				silent = true,
 				desc = "Show diagnostics",

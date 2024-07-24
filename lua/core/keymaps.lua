@@ -3,12 +3,15 @@ local map = require("utils.keymaps")
 vim.g.mapleader = " " 
 
 -- File
-map("n", "<leader>e", ":NvimTreeOpen<CR>", { desc = "Open Nvim Tree" })
+map("n", "<leader>e", ":NvimTreeFindFile<CR>", { desc = "Find current file in Nvim Tree" })
 map("n", "<leader>ss", ":wa<CR>", { desc = "Save file" })
 
--- Close buffer and window
+-- Buffers
 map("n", "<leader>vq", ":%bd<CR>:q<CR>", { desc = "Close neovim" })
 map("n", "<leader>qq", ":bd<CR>", { desc = "Close buffer and window" })
+map("n", "<leader>[", "<C-o>", { desc = "jump back" , noremap = true, silent = true })
+map("n", "<leader>]", "<C-i>", { desc = "jump forward" , noremap = true, silent = true })
+
 
 -- Clear search highlighting
 map("n", "<leader>sq", ":nohl<CR>", { desc = "Clear search highlighting" })
@@ -63,3 +66,6 @@ end, { desc = "Next todo comment" })
 vim.keymap.set("n", "[t", function()
   require("todo-comments").jump_prev()
 end, { desc = "Previous todo comment" })
+
+vim.keymap.set('n', '<leader>/', ':CommentToggle<CR>', { desc = "Toggle Comment" })
+vim.keymap.set('v', '<leader>/', ":CommentToggle<CR>", { desc = "Toggle Comment" })
