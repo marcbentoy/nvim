@@ -12,6 +12,11 @@ map("n", "<leader>qq", ":bd<CR>", { desc = "Close buffer and window" })
 map("n", "<leader>[", "<C-o>", { desc = "jump back" , noremap = true, silent = true })
 map("n", "<leader>]", "<C-i>", { desc = "jump forward" , noremap = true, silent = true })
 
+-- tmux
+map("n", "<C-h>", ":TmuxNavigateLeft<CR>", { desc = "window left" })
+map("n", "<C-l>", ":TmuxNavigateRight<CR>", { desc = "window right" })
+map("n", "<C-j>", ":TmuxNavigateDown<CR>", { desc = "window down" })
+map("n", "<C-k>", ":TmuxNavigateUp<CR>", { desc = "window up" })
 
 -- Clear search highlighting
 map("n", "<leader>sq", ":nohl<CR>", { desc = "Clear search highlighting" })
@@ -69,3 +74,18 @@ end, { desc = "Previous todo comment" })
 
 vim.keymap.set('n', '<leader>/', ':CommentToggle<CR>', { desc = "Toggle Comment" })
 vim.keymap.set('v', '<leader>/', ":CommentToggle<CR>", { desc = "Toggle Comment" })
+
+map("n", "<leader>m", ":Format<CR>", { desc = "Format file" })
+map("v", "<leader>m", ":Format<CR>", { desc = "Format file" })
+
+vim.api.nvim_create_user_command("Format", function(args)
+        local range = nil
+        if args.count ~= -1 then
+                local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+                range = {
+                        start = { args.line1, 0 },
+                        ["end"] = { args.line2, end_line:len() },
+                }
+        end
+        require("conform").format({ async = true, lsp_fallback = true, range = range })
+end, { range = true })
