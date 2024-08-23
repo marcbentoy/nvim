@@ -17,6 +17,12 @@ map("n", "<leader>qq", ":bd<CR>", { desc = "Close buffer and window" })
 map("n", "<leader>[", "<C-o>", { desc = "jump back" , noremap = true, silent = true })
 map("n", "<leader>]", "<C-i>", { desc = "jump forward" , noremap = true, silent = true })
 
+-- Navigate to the next buffer
+map('n', '<Tab>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+
+-- Navigate to the previous buffer
+map('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+
 -- tmux
 map("n", "<C-h>", ":TmuxNavigateLeft<CR>", { desc = "window left" })
 map("n", "<C-l>", ":TmuxNavigateRight<CR>", { desc = "window right" })
