@@ -6,6 +6,11 @@ vim.g.mapleader = " "
 map("n", "<leader>e", ":NvimTreeFindFile<CR>", { desc = "Find current file in Nvim Tree" })
 map("n", "<leader>ss", ":wa<CR>", { desc = "Save file" })
 
+-- fzf
+map('n', '<leader>ff', ':Files<CR>', { noremap = true, silent = true })
+map('n', '<leader>fb', ':Buffers<CR>', { noremap = true, silent = true })
+
+
 -- Buffers
 map("n", "<leader>vq", ":%bd<CR>:q<CR>", { desc = "Close neovim" })
 map("n", "<leader>qq", ":bd<CR>", { desc = "Close buffer and window" })
