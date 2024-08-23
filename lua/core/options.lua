@@ -7,7 +7,9 @@ vim.g.loaded_netrwPlugin = 1
 opt.conceallevel = 1
 
 opt.encoding = "UTF-8"
-vim.o.termguicolors = true
+
+--- Bufferline
+vim.opt.termguicolors = true
 
 ---
 --- General
