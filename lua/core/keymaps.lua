@@ -10,7 +10,6 @@ map("n", "<leader>ss", ":wa<CR>", { desc = "Save file" })
 map('n', '<leader>ff', ':Files<CR>', { noremap = true, silent = true })
 map('n', '<leader>fb', ':Buffers<CR>', { noremap = true, silent = true })
 
-
 -- Buffers
 map("n", "<leader>vq", ":%bd<CR>:q<CR>", { desc = "Close neovim" })
 map("n", "<leader>qq", ":bd<CR>", { desc = "Close buffer and window" })
@@ -22,6 +21,23 @@ map('n', '<Tab>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
 
 -- Navigate to the previous buffer
 map('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+
+-- Function to close current buffer and move to the next one
+function CloseCurrentBuffer()
+  local current_buffer = vim.api.nvim_get_current_buf()
+  vim.cmd('bd')
+  -- Move to the next buffer
+  vim.cmd('bnext')
+end
+
+-- Map the function to a key (e.g., <leader>c)
+vim.api.nvim_set_keymap('n', '<leader>x', ':lua CloseCurrentBuffer()<CR>', { noremap = true, silent = true })
+
+-- Close the current buffer without closing the window
+map('n', '<leader>C', ':bd!<CR>', { noremap = true, silent = true })
+
+-- Close all other buffers except the current one
+map('n', '<leader>bo', ':BufferLineCloseOthers<CR>', { noremap = true, silent = true })
 
 -- tmux
 map("n", "<C-h>", ":TmuxNavigateLeft<CR>", { desc = "window left" })
