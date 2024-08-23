@@ -1,11 +1,11 @@
 return {
-    "catppuccin/nvim",
-    priority = 1000 ,
-    config = true,
-    opts = {},
-    config = function()
-        require("catppuccin").setup()
+    -- "catppuccin/nvim",
+    -- priority = 1000 ,
+    -- config = true,
+    -- opts = {},
+    -- config = function()
+    --     require("catppuccin").setup()
 
-        vim.cmd([[colorscheme catppuccin-mocha]])
-    end
+    --     vim.cmd([[colorscheme catppuccin-mocha]])
+    -- end
 }

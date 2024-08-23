@@ -90,7 +90,7 @@ return {
 				desc = "Go to implementation",
 			})
 
-			buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", {
+			buf_set_keymap("n", "<S-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", {
 				noremap = true,
 				silent = true,
 				desc = "Show signature help",
