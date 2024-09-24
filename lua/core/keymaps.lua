@@ -7,6 +7,9 @@ map("n", "<leader>e", ":NvimTreeFindFile<CR>", { desc = "Find current file in Nv
 map("n", "<leader>wf", ":w<CR>", { desc = "Save file" })
 map("n", "<leader>w.", ":wa<CR>", { desc = "Save all files" })
 
+vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true })
+vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true })
+
 -- fzf
 map("n", "<leader>ff", ":Files<CR>", { noremap = true, silent = true })
 map("n", "<leader>fb", ":Buffers<CR>", { noremap = true, silent = true })
