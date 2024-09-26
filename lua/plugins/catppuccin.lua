@@ -1,11 +1,15 @@
 return {
-    -- "catppuccin/nvim",
-    -- priority = 1000 ,
-    -- config = true,
-    -- opts = {},
-    -- config = function()
-    --     require("catppuccin").setup()
+	"catppuccin/nvim",
+	priority = 1000,
+	config = true,
+	opts = {},
+	config = function()
+		local transparent = true
 
-    --     vim.cmd([[colorscheme catppuccin-mocha]])
-    -- end
+		require("catppuccin").setup({
+			transparent_background = transparent,
+		})
+
+		vim.cmd("colorscheme catppuccin-mocha")
+	end,
 }
